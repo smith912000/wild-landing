@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WILD Programme — The Dreaming Path</title>
+<meta name="description" content="The contemplative approach to Wake-Induced Lucid Dreaming. Dream yoga, conscious awareness, and the inner work of waking within the dream.">
+
+<!-- OG / Social -->
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="WILD Programme — The Dreaming Path" />
+<meta property="og:description" content="The contemplative approach to Wake-Induced Lucid Dreaming. Dream yoga, conscious awareness, inner work." />
+<meta property="og:url"         content="https://smith912000.github.io/wild-landing/spiritual/" />
+<meta property="og:image"       content="https://smith912000.github.io/wild-landing/og-image.svg" />
+<meta name="twitter:card"       content="summary_large_image" />
+<meta name="twitter:title"      content="WILD Programme — The Dreaming Path" />
+<meta name="twitter:description" content="The contemplative approach to Wake-Induced Lucid Dreaming. Dream yoga and conscious awareness." />
+<meta name="twitter:image"      content="https://smith912000.github.io/wild-landing/og-image.svg" />
+
+<!-- GA4 — replace G-XXXXXXXXXX with the real measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<style>
+  :root {
+    --bg:       #0d0a1a;
+    --surface:  #171327;
+    --border:   rgba(255,255,255,.07);
+    --text:     #e9e4f3;
+    --muted:    #9990b0;
+    --purple:   #a78bfa;
+    --purple2:  #8b6fe8;
+    --sky:      #7dd3fc;
+    --gold:     #f0b429;
+    --rose:     #f0729a;
+    --green:    #3fb950;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    padding: 0 0 60px;
+  }
+
+  /* ── BACK LINK ──────────────────────────── */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .75rem;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 16px 0 0 20px;
+    transition: color .15s;
+  }
+  .back-link:hover { color: var(--text); }
+
+  /* ── HEADER ─────────────────────────────── */
+  .hero {
+    text-align: center;
+    padding: 28px 24px 36px;
+    position: relative;
+  }
+  .hero::after {
+    content: '';
+    display: block;
+    width: 200px; height: 1px;
+    background: linear-gradient(90deg,transparent,rgba(167,139,250,.4),rgba(240,114,154,.4),transparent);
+    margin: 36px auto 0;
+  }
+  .logo-ring {
+    width: 72px; height: 72px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, rgba(167,139,250,.22) 0%, rgba(240,114,154,.12) 60%, transparent 100%);
+    border: 1px solid rgba(167,139,250,.3);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+    box-shadow: 0 0 36px rgba(167,139,250,.15);
+  }
+  .wordmark {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    background: linear-gradient(135deg, #a78bfa 0%, #f0729a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .wordmark span {
+    font-weight: 300;
+    letter-spacing: .04em;
+    font-size: 1rem;
+    display: block;
+    -webkit-text-fill-color: var(--muted);
+    color: var(--muted);
+    margin-top: 4px;
+    background: none;
+  }
+  .tagline {
+    margin-top: 14px;
+    font-size: .9rem;
+    color: var(--muted);
+    max-width: 360px;
+    margin-left: auto; margin-right: auto;
+    line-height: 1.55;
+  }
+
+  /* ── LAYOUT ──────────────────────────────── */
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  /* ── SECTION LABELS ─────────────────────── */
+  .section-label {
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 32px 0 10px;
+    padding-left: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ── LINK CARDS ─────────────────────────── */
+  .link-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all .18s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .link-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity .18s;
+  }
+  .link-card:hover {
+    transform: translateY(-1px);
+    border-color: rgba(255,255,255,.14);
+    box-shadow: 0 6px 24px rgba(0,0,0,.4);
+  }
+  .link-card:hover::before { opacity: 1; }
+
+  .link-card.purple { border-left: 3px solid var(--purple); }
+  .link-card.purple::before { background: linear-gradient(90deg,rgba(167,139,250,.07),transparent); }
+  .link-card.purple:hover { border-color: var(--purple); }
+
+  .link-card.sky    { border-left: 3px solid var(--sky); }
+  .link-card.sky::before    { background: linear-gradient(90deg,rgba(125,211,252,.06),transparent); }
+  .link-card.sky:hover    { border-color: var(--sky); }
+
+  .link-card.gold   { border-left: 3px solid var(--gold); }
+  .link-card.gold::before   { background: linear-gradient(90deg,rgba(240,180,41,.06),transparent); }
+  .link-card.gold:hover   { border-color: var(--gold); }
+
+  .link-card.rose   { border-left: 3px solid var(--rose); }
+  .link-card.rose::before   { background: linear-gradient(90deg,rgba(240,114,154,.07),transparent); }
+  .link-card.rose:hover   { border-color: var(--rose); }
+
+  .link-card.green  { border-left: 3px solid var(--green); }
+  .link-card.green::before  { background: linear-gradient(90deg,rgba(63,185,80,.06),transparent); }
+  .link-card.green:hover  { border-color: var(--green); }
+
+  .link-card.x-black { border-left: 3px solid #fff; }
+  .link-card.x-black::before { background: linear-gradient(90deg,rgba(255,255,255,.05),transparent); }
+  .link-card.x-black:hover { border-color: #fff; box-shadow: 0 6px 24px rgba(255,255,255,.06); }
+
+  .card-icon {
+    font-size: 1.4rem;
+    width: 36px;
+    text-align: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .card-body {
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+  }
+  .card-title {
+    font-size: .9rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .card-sub {
+    font-size: .75rem;
+    color: var(--muted);
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-badge {
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .badge-free   { background: rgba(167,139,250,.15); color: var(--purple); border: 1px solid rgba(167,139,250,.3); }
+  .badge-soon   { background: rgba(153,144,176,.1);  color: var(--muted);  border: 1px solid rgba(153,144,176,.25); }
+
+  .link-card.disabled {
+    opacity: .55;
+    cursor: default;
+    pointer-events: none;
+  }
+  .link-card.disabled:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--border);
+  }
+
+  /* ── HERO CARD ──────────────────────────── */
+  .path-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 20px 12px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all .18s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .path-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0,0,0,.5);
+  }
+  .path-card.spirit { border-top: 2px solid var(--purple); }
+  .path-card.spirit:hover { border-color: var(--purple); box-shadow: 0 8px 28px rgba(167,139,250,.15); }
+  .path-icon { font-size: 2rem; }
+  .path-label {
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .path-label.spirit { color: var(--purple); }
+  .path-name {
+    font-size: .85rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .path-desc {
+    font-size: .72rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .path-cta {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-top: 4px;
+  }
+  .path-card.spirit .path-cta { background: rgba(167,139,250,.15); color: var(--purple); border: 1px solid rgba(167,139,250,.3); }
+
+  /* ── DIVIDER / FOOTER ───────────────────── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 36px 0 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 24px 0;
+    font-size: .72rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--text); }
+  .footer-brand {
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    background: linear-gradient(135deg, #a78bfa, #f0729a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+  }
+</style>
+</head>
+<body>
+
+<a href="../index.html" class="back-link">← Choose path</a>
+
+<!-- ══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<div class="hero">
+  <div class="logo-ring">🌙</div>
+  <div class="wordmark">
+    WILD
+    <span>Wake-Induced Lucid Dreaming · The Dreaming Path</span>
+  </div>
+  <p class="tagline">Waking within the dream. Dream yoga, conscious awareness, and the inner work of meeting yourself in the night.</p>
+</div>
+
+<div class="container">
+
+  <!-- ── WILD OS APP ──────────────────────── -->
+  <a href="https://smith912000.github.io/wild-os/"
+     class="path-card spirit" style="flex-direction:row;text-align:left;gap:16px;padding:20px 20px;border-color:rgba(167,139,250,0.4);background:linear-gradient(135deg,rgba(167,139,250,0.1) 0%,rgba(167,139,250,0.03) 100%);"
+     target="_blank" rel="noopener"
+     onclick="gtag('event','click',{event_category:'spiritual_hub',event_label:'wild_os_app'})">
+    <div class="path-icon" style="font-size:2.2rem;flex-shrink:0">📱</div>
+    <div>
+      <div class="path-label spirit">WILD OS — Practice App</div>
+      <div class="path-name" style="font-size:1rem;margin-top:4px">Breathwork · Binaural · Sleep Tracker · Dream Journal</div>
+      <div class="path-desc" style="margin-top:6px">A quiet companion for the practice — breathwork, binaural tones, dream journal &amp; the witness log</div>
+      <div class="path-cta" style="display:inline-block;margin-top:10px">Open App →</div>
+    </div>
+  </a>
+
+  <!-- ── THE PROGRAMME ────────────────────── -->
+  <div class="section-label">The path</div>
+
+  <a href="pages/landing_spiritual.html"
+     class="path-card spirit" style="flex-direction:row;text-align:left;gap:16px;padding:20px 20px;"
+     onclick="gtag('event','click',{event_category:'spiritual_hub',event_label:'dreaming_path_track'})">
+    <div class="path-icon" style="font-size:2.2rem;flex-shrink:0">🔮</div>
+    <div>
+      <div class="path-label spirit">The Dreaming Path</div>
+      <div class="path-name" style="font-size:1rem;margin-top:4px">WILD Programme — The Dreaming Path</div>
+      <div class="path-desc" style="margin-top:6px">Dream yoga · the witness · conscious awareness · contemplative practice · the latent self</div>
+      <div class="path-cta" style="display:inline-block;margin-top:10px">Begin the practice →</div>
+    </div>
+  </a>
+
+  <!-- ── FREE RESOURCES ───────────────────── -->
+  <!-- NOTE: lead-magnet PDFs are delivered via Kit email capture. Links point to the
+       landing page (which has the form) until the Kit form is embedded. -->
+  <div class="section-label">Free resources</div>
+
+  <a href="pages/landing_spiritual.html"
+     class="link-card purple"
+     onclick="gtag('event','click',{event_category:'spiritual_hub',event_label:'free_protocol'})">
+    <div class="card-icon">🕯️</div>
+    <div class="card-body">
+      <div class="card-title">7-Night Dreaming Practice</div>
+      <div class="card-sub">A gentle entry into waking within the dream</div>
+    </div>
+    <span class="card-badge badge-free">Free</span>
+  </a>
+
+  <a href="pages/landing_spiritual.html"
+     class="link-card purple"
+     onclick="gtag('event','click',{event_category:'spiritual_hub',event_label:'free_dream_map'})">
+    <div class="card-icon">🌌</div>
+    <div class="card-body">
+      <div class="card-title">Map of the Night</div>
+      <div class="card-sub">The stages of sleep as a contemplative landscape</div>
+    </div>
+    <span class="card-badge badge-free">PDF</span>
+  </a>
+
+  <a href="pages/landing_spiritual.html"
+     class="link-card purple"
+     onclick="gtag('event','click',{event_category:'spiritual_hub',event_label:'free_readiness'})">
+    <div class="card-icon">✨</div>
+    <div class="card-body">
+      <div class="card-title">Signs the Dream Is Calling You</div>
+      <div class="card-sub">A short reflection on readiness for the practice</div>
+    </div>
+    <span class="card-badge badge-free">PDF</span>
+  </a>
+
+  <!-- ── COURSES ───────────────────────────── -->
+  <div class="section-label">The teachings</div>
+
+  <div class="link-card purple disabled">
+    <div class="card-icon">🌱</div>
+    <div class="card-body">
+      <div class="card-title">Tier 1 — Foundations</div>
+      <div class="card-sub">7-module core programme · Both tracks available</div>
+    </div>
+    <span class="card-badge badge-soon">🕐 Soon</span>
+  </div>
+
+  <div class="link-card gold disabled">
+    <div class="card-icon">⚡</div>
+    <div class="card-body">
+      <div class="card-title">Tier 2 — Advanced Practitioner</div>
+      <div class="card-sub">Deepening the dream body, the witness &amp; sustained lucidity · 10 modules</div>
+    </div>
+    <span class="card-badge badge-soon">🕐 Soon</span>
+  </div>
+
+  <div class="link-card rose disabled">
+    <div class="card-icon">🔮</div>
+    <div class="card-body">
+      <div class="card-title">Tier 3 — Master + Retreat</div>
+      <div class="card-sub">Live Q&amp;A, workshop &amp; annual virtual retreat · 6 modules</div>
+    </div>
+    <span class="card-badge badge-soon">🕐 Soon</span>
+  </div>
+
+  <!-- ── COMMUNITY ─────────────────────────── -->
+  <div class="section-label">Community</div>
+
+  <div class="link-card purple disabled">
+    <div class="card-icon">💬</div>
+    <div class="card-body">
+      <div class="card-title">Discord — The Dreaming Path</div>
+      <div class="card-sub">Shared practice · dream circles · contemplative discussion · live sittings</div>
+    </div>
+    <span class="card-badge badge-soon">🕐 Soon</span>
+  </div>
+
+  <!-- ── SOCIALS ───────────────────────────── -->
+  <!-- SWAP: replace href="#" and handles once the SPIRITUAL social accounts exist.
+       See SOCIAL_ACCOUNTS.md. Five platforms: X, Instagram, YouTube, TikTok, Reddit.
+       When live: change href, update card-title with real handle, remove "disabled"
+       class and the badge-soon span. -->
+  <div class="section-label">Socials &amp; more</div>
+
+  <a href="#" data-social="spiritual-x"
+     class="link-card x-black disabled"
+     onclick="gtag('event','click',{event_category:'spiritual_hub',event_label:'social_x'})">
+    <div class="card-icon">𝕏</div>
+    <div class="card-body">
+      <div class="card-title">The Dreaming Path on X</div>
+      <div class="card-sub">Reflections on dream, awareness &amp; the inner night</div>
+    </div>
+    <span class="card-badge badge-soon">Soon</span>
+  </a>
+
+  <a href="#" data-social="spiritual-instagram"
+     class="link-card purple disabled"
+     onclick="gtag('event','click',{event_category:'spiritual_hub',event_label:'social_instagram'})">
+    <div class="card-icon">📸</div>
+    <div class="card-body">
+      <div class="card-title">The Dreaming Path on Instagram</div>
+      <div class="card-sub">Dream imagery, practice notes &amp; contemplative visuals</div>
+    </div>
+    <span class="card-badge badge-soon">Soon</span>
+  </a>
+
+  <a href="#" data-social="spiritual-youtube"
+     class="link-card rose disabled"
+     onclick="gtag('event','click',{event_category:'spiritual_hub',event_label:'social_youtube'})">
+    <div class="card-icon">▶️</div>
+    <div class="card-body">
+      <div class="card-title">The Dreaming Path on YouTube</div>
+      <div class="card-sub">Guided practices, dream-yoga talks &amp; Q&amp;A</div>
+    </div>
+    <span class="card-badge badge-soon">Soon</span>
+  </a>
+
+  <a href="#" data-social="spiritual-tiktok"
+     class="link-card sky disabled"
+     onclick="gtag('event','click',{event_category:'spiritual_hub',event_label:'social_tiktok'})">
+    <div class="card-icon">🎵</div>
+    <div class="card-body">
+      <div class="card-title">The Dreaming Path on TikTok</div>
+      <div class="card-sub">Short reflections &amp; practice fragments</div>
+    </div>
+    <span class="card-badge badge-soon">Soon</span>
+  </a>
+
+  <a href="#" data-social="spiritual-reddit"
+     class="link-card gold disabled"
+     onclick="gtag('event','click',{event_category:'spiritual_hub',event_label:'social_reddit'})">
+    <div class="card-icon">🤖</div>
+    <div class="card-body">
+      <div class="card-title">The Dreaming Path on Reddit</div>
+      <div class="card-sub">Dream circles, shared practice &amp; deeper discussion</div>
+    </div>
+    <span class="card-badge badge-soon">Soon</span>
+  </a>
+
+  <div class="divider"></div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <div class="footer-brand">WILD Programme · The Dreaming Path</div>
+  <a href="pages/legal.html">Privacy &amp; Terms</a>
+  &nbsp;·&nbsp;
+  <a href="mailto:CONTACT_EMAIL_PLACEHOLDER">Contact</a>
+  <br>
+  © 2026 WILD Programme. All rights reserved.
+</div>
+
+</body>
+</html>
