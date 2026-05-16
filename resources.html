@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Free Resources — WILD Programme</title>
+<meta name="description" content="Free WILD Programme resources: 4 science (Oneirology) and 4 contemplative (The Dreaming Path) PDFs. Enter your email once for access to all 8." />
+<meta property="og:title" content="Free Resources — WILD Programme" />
+<meta property="og:description" content="Eight free PDFs across both tracks. One email, all eight resources." />
+<meta property="og:url" content="https://smith912000.github.io/wild-landing/resources.html" />
+<meta property="og:image" content="https://smith912000.github.io/wild-landing/og-image.svg" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0b0a14;--surface:#161420;--border:rgba(255,255,255,.07);
+  --text:#e9e6f0;--muted:#948ca8;
+  --sci:#7dd3fc;--spi:#a78bfa;--green:#3fb950;--red:#f87171;--gold:#e3a008;
+}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;min-height:100vh;padding:24px 16px 60px}
+.wrap{max-width:880px;margin:0 auto}
+.back{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:var(--muted);text-decoration:none;margin-bottom:24px}
+.back:hover{color:var(--text)}
+.hero{text-align:center;padding:20px 0 40px}
+.hero-icon{font-size:36px;margin-bottom:16px}
+.wordmark{font-size:1.8rem;font-weight:800;letter-spacing:.08em;background:linear-gradient(135deg,#7dd3fc,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+.wordmark span{display:block;font-weight:300;font-size:.85rem;letter-spacing:.04em;color:var(--muted);-webkit-text-fill-color:var(--muted);margin-top:4px}
+.tagline{font-size:.92rem;color:var(--muted);max-width:520px;margin:14px auto 0;line-height:1.65}
+
+/* EMAIL CAPTURE */
+.capture{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;max-width:520px;margin:32px auto 0;position:relative}
+.capture.unlocked{border-color:rgba(63,185,80,.35)}
+.cap-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;text-align:center}
+.cap-title{font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:6px;text-align:center}
+.cap-sub{font-size:.85rem;color:var(--muted);text-align:center;margin-bottom:18px}
+.cap-form{display:flex;gap:8px;flex-direction:column}
+.cap-row{display:flex;gap:8px}
+@media(max-width:480px){.cap-row{flex-direction:column}}
+input[type="email"]{flex:1;background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:10px;font-size:14px;font-family:inherit;outline:none;transition:border-color .15s}
+input[type="email"]:focus{border-color:var(--spi)}
+input[type="email"].error{border-color:var(--red)}
+.cap-track{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:8px 0 4px;font-size:11px;color:var(--muted)}
+.cap-track label{display:flex;gap:4px;align-items:center;cursor:pointer;padding:4px 8px;border-radius:6px;transition:background .15s}
+.cap-track label:hover{background:rgba(255,255,255,.04)}
+.cap-track input[type="checkbox"]{accent-color:var(--spi);cursor:pointer}
+.cap-btn{padding:13px 18px;background:linear-gradient(135deg,var(--sci),var(--spi));border:none;color:#0b0a14;font-weight:700;font-size:14px;border-radius:10px;cursor:pointer;transition:transform .12s,box-shadow .15s;font-family:inherit}
+.cap-btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 8px 24px rgba(167,139,250,.25)}
+.cap-btn:disabled{opacity:.5;cursor:not-allowed}
+.cap-msg{font-size:12px;margin-top:8px;text-align:center;min-height:14px}
+.cap-msg.err{color:var(--red)}
+.cap-msg.ok{color:var(--green)}
+.cap-fine{font-size:11px;color:var(--muted);text-align:center;margin-top:10px;line-height:1.5}
+
+/* RESOURCES */
+.section-head{margin:40px 0 14px;display:flex;align-items:center;gap:10px;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-left:4px}
+.section-head .accent{color:var(--text)}
+.section-head::after{content:'';flex:1;height:1px;background:var(--border)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px 18px;text-decoration:none;color:var(--text);transition:all .15s;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden}
+.card.sci{border-left:3px solid var(--sci)}
+.card.spi{border-left:3px solid var(--spi)}
+.card.locked{opacity:.7;cursor:not-allowed;pointer-events:none}
+.card.unavailable{opacity:.45;cursor:not-allowed;pointer-events:none}
+.card:not(.locked):not(.unavailable):hover{transform:translateY(-1px);border-color:rgba(255,255,255,.18);box-shadow:0 4px 16px rgba(0,0,0,.3)}
+.card-ic{font-size:18px}
+.card-t{font-size:.88rem;font-weight:600;line-height:1.3}
+.card-d{font-size:.72rem;color:var(--muted);line-height:1.45}
+.card-b{font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:10px;align-self:flex-start;margin-top:4px}
+.b-pdf{background:rgba(63,185,80,.14);color:var(--green);border:1px solid rgba(63,185,80,.3)}
+.b-lock{background:rgba(148,140,168,.1);color:var(--muted);border:1px solid var(--border)}
+.b-soon{background:rgba(227,160,8,.1);color:var(--gold);border:1px solid rgba(227,160,8,.3)}
+
+.lock-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(11,10,20,.7);backdrop-filter:blur(2px);font-size:18px;color:var(--muted);border-radius:9px}
+.locked .lock-overlay,.unavailable .lock-overlay{display:flex}
+.unlocked .lock-overlay{display:none}
+
+.tracknote{font-size:.72rem;color:var(--muted);margin-top:6px;padding-left:4px;font-style:italic}
+.foot{margin-top:48px;text-align:center;font-size:.72rem;color:var(--muted)}
+.foot a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <a href="index.html" class="back">← Back to gateway</a>
+
+  <div class="hero">
+    <div class="hero-icon">🌙</div>
+    <div class="wordmark">Free Resources<span>Both tracks — one email, eight resources</span></div>
+    <p class="tagline">Four for the Oneirology track (science), four for The Dreaming Path (contemplative). All free, all downloadable PDFs.</p>
+  </div>
+
+  <!-- EMAIL CAPTURE -->
+  <form class="capture" id="cap" novalidate>
+    <div class="cap-label">Step 1 of 2</div>
+    <div class="cap-title">Enter your email to unlock the 8 resources</div>
+    <div class="cap-sub">No spam. One email, all eight downloads. Tag your interest below (optional).</div>
+    <div class="cap-form">
+      <div class="cap-row">
+        <input type="email" id="email" placeholder="you@example.com" required autocomplete="email" />
+        <button type="submit" class="cap-btn" id="submit">Unlock all 8 →</button>
+      </div>
+      <div class="cap-track">
+        <label><input type="checkbox" name="track" value="science" checked> Mostly science</label>
+        <label><input type="checkbox" name="track" value="spiritual" checked> Mostly contemplative</label>
+      </div>
+      <div class="cap-msg" id="msg"></div>
+      <div class="cap-fine">Your email goes to our private list. Used only for the 7-day Dream Recall course and occasional WILD updates. Unsubscribe anytime in one click.</div>
+    </div>
+  </form>
+
+  <!-- SCIENCE RESOURCES -->
+  <div class="section-head">🔬 <span class="accent">Oneirology</span> — science track</div>
+  <div class="grid" id="grid-sci">
+    <a class="card sci locked" data-magnet="sci-1" href="#" target="_blank" rel="noopener">
+      <div class="card-ic">📋</div>
+      <div class="card-t">3-Night WILD Taster</div>
+      <div class="card-d">Three structured nights — the door to the practice. Full 7-night system is in Tier 1.</div>
+      <div class="card-b b-pdf">PDF</div>
+      <div class="lock-overlay">🔒</div>
+    </a>
+    <a class="card sci locked" data-magnet="sci-2" href="#" target="_blank" rel="noopener">
+      <div class="card-ic">🧠</div>
+      <div class="card-t">Sleep Architecture Map</div>
+      <div class="card-d">Visual REM-cycle breakdown and the WILD entry-point timing across the night.</div>
+      <div class="card-b b-pdf">PDF</div>
+      <div class="lock-overlay">🔒</div>
+    </a>
+    <a class="card sci locked" data-magnet="sci-3" href="#" target="_blank" rel="noopener">
+      <div class="card-ic">✅</div>
+      <div class="card-t">5 Signs You're Ready</div>
+      <div class="card-d">A two-minute readiness qualifier. Where to start, where to wait.</div>
+      <div class="card-b b-pdf">PDF</div>
+      <div class="lock-overlay">🔒</div>
+    </a>
+    <a class="card sci locked" data-magnet="sci-4" href="#" target="_blank" rel="noopener">
+      <div class="card-ic">🌌</div>
+      <div class="card-t">The Hypnagogic Gateway</div>
+      <div class="card-d">The threshold state explained — what hypnagogia is, why it's the WILD entry point, and how to recognise it.</div>
+      <div class="card-b b-pdf">PDF</div>
+      <div class="lock-overlay">🔒</div>
+    </a>
+  </div>
+  <div class="tracknote">Oneirology track: research-grounded language, sleep-science framing.</div>
+
+  <!-- SPIRITUAL RESOURCES -->
+  <div class="section-head">🔮 <span class="accent">The Dreaming Path</span> — contemplative track</div>
+  <div class="grid" id="grid-spi">
+    <a class="card spi locked" data-magnet="spi-1" href="#" target="_blank" rel="noopener">
+      <div class="card-ic">🕯️</div>
+      <div class="card-t">3-Night Dreaming Initiation</div>
+      <div class="card-d">A gentle entry into waking within the dream. Full 7-night initiation is in Tier 1.</div>
+      <div class="card-b b-pdf">PDF</div>
+      <div class="lock-overlay">🔒</div>
+    </a>
+    <a class="card spi unavailable" data-magnet="spi-2" href="#" target="_blank" rel="noopener">
+      <div class="card-ic">🌌</div>
+      <div class="card-t">Map of the Night</div>
+      <div class="card-d">The stages of sleep as a contemplative landscape — the witness in each phase.</div>
+      <div class="card-b b-soon">Coming soon</div>
+      <div class="lock-overlay">⏳</div>
+    </a>
+    <a class="card spi unavailable" data-magnet="spi-3" href="#" target="_blank" rel="noopener">
+      <div class="card-ic">✨</div>
+      <div class="card-t">Signs the Dream Is Calling</div>
+      <div class="card-d">A short reflection on readiness for the practice — five signs you're ready to begin.</div>
+      <div class="card-b b-soon">Coming soon</div>
+      <div class="lock-overlay">⏳</div>
+    </a>
+    <a class="card spi unavailable" data-magnet="spi-4" href="#" target="_blank" rel="noopener">
+      <div class="card-ic">🪞</div>
+      <div class="card-t">The Witness — A Daily Reflection</div>
+      <div class="card-d">Seven contemplative questions, one per day, to seat the witness before the dreaming begins.</div>
+      <div class="card-b b-soon">Coming soon</div>
+      <div class="lock-overlay">⏳</div>
+    </a>
+  </div>
+  <div class="tracknote">The Dreaming Path: contemplative language, witness-practice framing. Spi-2/3/4 still being written.</div>
+
+  <div class="foot">
+    <a href="index.html">Gateway</a> &nbsp;·&nbsp;
+    <a href="science/pages/legal.html">Privacy &amp; Terms</a> &nbsp;·&nbsp;
+    <a href="mailto:CONTACT_EMAIL_PLACEHOLDER">Contact</a><br>
+    © 2026 WILD Programme. All rights reserved.
+  </div>
+
+</div>
+
+<script>
+/* ============================================================================
+   EMAIL CAPTURE — sends to Google Forms endpoint, then unlocks the 8 cards.
+
+   SETUP REQUIRED (do this once, then it works forever):
+   1. Create a Google Form (forms.new) with 3 fields:
+        - Email (Short answer)
+        - Tracks (Checkboxes: science, spiritual)
+        - Magnet (Short answer — auto-filled "all-resources-unlock")
+   2. Form -> Responses -> link to a Drive Sheet (auto-creates one)
+   3. View source of the form's "send" page, copy:
+        - The form's POST URL (looks like: https://docs.google.com/forms/d/e/FORM_ID/formResponse)
+        - The entry IDs for each field (look for entry.NUMBER)
+   4. Paste them into FORM_CONFIG below.
+   5. Done. Submissions land in your Drive Sheet automatically.
+
+   For now the form acts in TEST MODE — it stores to localStorage so the page
+   works for testing. Real submission only fires once you fill in FORM_CONFIG.
+   ============================================================================ */
+
+const FORM_CONFIG = {
+  // PASTE: Google Forms POST URL (https://docs.google.com/forms/d/e/.../formResponse)
+  url: '',
+  fields: {
+    email: '',     // PASTE entry ID for the email field, e.g. 'entry.1234567890'
+    tracks: '',    // PASTE entry ID for the tracks checkboxes
+    magnet: '',    // PASTE entry ID for the magnet identifier
+  },
+};
+
+// PDF URLs — point these at the actual Drive-hosted PDFs once uploaded.
+// Drive sharing: right-click PDF -> Share -> Anyone with link -> copy link.
+// Use the direct download form: https://drive.google.com/uc?export=download&id=FILE_ID
+const MAGNETS = {
+  'sci-1': '#sci-1-pdf-url-not-set',
+  'sci-2': '#sci-2-pdf-url-not-set',
+  'sci-3': '#sci-3-pdf-url-not-set',
+  'sci-4': '#sci-4-pdf-url-not-set',
+  'spi-1': '#spi-1-pdf-url-not-set',
+  // spi-2/3/4 not yet written
+};
+
+const STORAGE_KEY = 'wild_resources_unlocked';
+const EMAIL_RX = /^[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$/;
+
+function isValidEmail(email) {
+  if (!email || email.length > 254) return false;
+  if (!EMAIL_RX.test(email)) return false;
+  // Block obvious junk
+  const local = email.split('@')[0];
+  if (local.length > 64) return false;
+  // Reject disposable-domain markers
+  const banned = ['mailinator', 'guerrillamail', 'tempmail', '10minute', 'throwaway'];
+  return !banned.some(b => email.toLowerCase().includes(b));
+}
+
+function unlockCards() {
+  document.querySelectorAll('.card.locked').forEach(c => {
+    c.classList.remove('locked');
+    c.classList.add('unlocked');
+    const id = c.dataset.magnet;
+    if (MAGNETS[id]) c.href = MAGNETS[id];
+  });
+}
+
+function showMessage(text, type) {
+  const m = document.getElementById('msg');
+  m.textContent = text;
+  m.className = 'cap-msg ' + (type || '');
+}
+
+async function submitToGoogleForm(email, tracks) {
+  if (!FORM_CONFIG.url || !FORM_CONFIG.fields.email) {
+    // Test mode — just succeed locally
+    console.warn('[wild] FORM_CONFIG not set — running in test mode. Submission only saved to localStorage.');
+    return { ok: true, mode: 'test' };
+  }
+  const fd = new FormData();
+  fd.append(FORM_CONFIG.fields.email, email);
+  if (FORM_CONFIG.fields.tracks) fd.append(FORM_CONFIG.fields.tracks, tracks.join(', '));
+  if (FORM_CONFIG.fields.magnet) fd.append(FORM_CONFIG.fields.magnet, 'all-resources-unlock');
+  try {
+    await fetch(FORM_CONFIG.url, { method: 'POST', mode: 'no-cors', body: fd });
+    return { ok: true, mode: 'live' };
+  } catch (e) {
+    console.error('[wild] form submit failed', e);
+    return { ok: false, error: e.message };
+  }
+}
+
+// If user already unlocked in a previous visit, unlock immediately
+(function checkPriorUnlock() {
+  try {
+    const prior = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+    if (prior && prior.email && isValidEmail(prior.email)) {
+      unlockCards();
+      const cap = document.getElementById('cap');
+      cap.classList.add('unlocked');
+      cap.querySelector('.cap-title').textContent = 'You already unlocked these.';
+      cap.querySelector('.cap-sub').textContent = 'Saved against ' + prior.email + ' — downloads ready below.';
+      cap.querySelector('.cap-form').style.display = 'none';
+    }
+  } catch {}
+})();
+
+document.getElementById('cap').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const emailEl = document.getElementById('email');
+  const submitBtn = document.getElementById('submit');
+  const email = emailEl.value.trim().toLowerCase();
+
+  if (!isValidEmail(email)) {
+    emailEl.classList.add('error');
+    showMessage('That doesn\'t look like a valid email — try again.', 'err');
+    return;
+  }
+  emailEl.classList.remove('error');
+
+  const tracks = Array.from(document.querySelectorAll('.cap-track input:checked')).map(i => i.value);
+
+  submitBtn.disabled = true;
+  showMessage('Unlocking…');
+
+  const result = await submitToGoogleForm(email, tracks);
+
+  if (result.ok) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ email, tracks, ts: Date.now() }));
+    showMessage(result.mode === 'test'
+      ? '✓ Unlocked (test mode — wire FORM_CONFIG to capture live).'
+      : '✓ Unlocked. Check your inbox shortly for the 7-day Dream Recall course.',
+      'ok');
+    unlockCards();
+    document.getElementById('cap').classList.add('unlocked');
+  } else {
+    showMessage('Something went wrong. Email us at the contact link below.', 'err');
+    submitBtn.disabled = false;
+  }
+});
+</script>
+
+</body>
+</html>
