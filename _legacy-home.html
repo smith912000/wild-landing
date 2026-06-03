@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WILD Programme — Wake-Induced Lucid Dreaming</title>
+<meta name="description" content="Wake-Induced Lucid Dreaming, two ways: the Oneirology track for the research-minded, the Dreaming Path for the contemplative. Choose your way in.">
+
+<!-- OG / Social -->
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="WILD Programme — Wake-Induced Lucid Dreaming" />
+<meta property="og:description" content="Two ways into conscious dreaming — Oneirology (science) and The Dreaming Path (contemplative). Choose your way in." />
+<meta property="og:url"         content="https://smith912000.github.io/wild-landing/" />
+<meta property="og:image"       content="https://smith912000.github.io/wild-landing/og-image.svg" />
+<meta name="twitter:card"       content="summary_large_image" />
+<meta name="twitter:title"      content="WILD Programme" />
+<meta name="twitter:description" content="Two ways into Wake-Induced Lucid Dreaming. Choose your way in." />
+<meta name="twitter:image"      content="https://smith912000.github.io/wild-landing/og-image.svg" />
+
+<!-- GA4 — replace G-XXXXXXXXXX with the real measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<style>
+  :root {
+    --bg:       #0b0a14;
+    --surface:  #14121f;
+    --border:   rgba(255,255,255,.07);
+    --text:     #e9e6f0;
+    --muted:    #948ca8;
+    --green:    #3fb950;
+    --sky:      #7dd3fc;
+    --purple:   #a78bfa;
+    --rose:     #f0729a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* ambient glow */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 50% 40% at 30% 25%, rgba(125,211,252,.08), transparent),
+      radial-gradient(ellipse 50% 40% at 70% 75%, rgba(167,139,250,.10), transparent);
+    pointer-events: none;
+  }
+
+  .gateway {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 540px;
+    width: 100%;
+  }
+
+  .logo-ring {
+    width: 84px; height: 84px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, rgba(125,211,252,.2) 0%, rgba(167,139,250,.14) 60%, transparent 100%);
+    border: 1px solid rgba(167,139,250,.25);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 24px;
+    font-size: 36px;
+    box-shadow: 0 0 44px rgba(167,139,250,.14);
+  }
+  .wordmark {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    background: linear-gradient(135deg, #7dd3fc 0%, #a78bfa 60%, #f0729a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .wordmark span {
+    font-weight: 300;
+    letter-spacing: .05em;
+    font-size: 1rem;
+    display: block;
+    -webkit-text-fill-color: var(--muted);
+    color: var(--muted);
+    margin-top: 6px;
+    background: none;
+  }
+  .tagline {
+    margin: 18px auto 0;
+    font-size: .92rem;
+    color: var(--muted);
+    max-width: 380px;
+    line-height: 1.6;
+  }
+
+  /* ── ENTER BUTTON (click 1) ─────────────── */
+  .enter-btn {
+    margin-top: 36px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, rgba(125,211,252,.14), rgba(167,139,250,.14));
+    border: 1px solid rgba(167,139,250,.35);
+    color: var(--text);
+    font-size: .95rem;
+    font-weight: 600;
+    letter-spacing: .03em;
+    padding: 14px 32px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all .2s ease;
+  }
+  .enter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(167,139,250,.2);
+    border-color: rgba(167,139,250,.6);
+  }
+  .enter-btn .arrow { transition: transform .2s ease; }
+  .enter-btn:hover .arrow { transform: translateX(3px); }
+
+  /* ── PATH GRID (revealed on click 2) ────── */
+  .path-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 36px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height .5s ease, opacity .4s ease, margin-top .4s ease;
+  }
+  .path-grid.open {
+    max-height: 520px;
+    opacity: 1;
+  }
+  .path-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 18px;
+    text-decoration: none;
+    color: var(--text);
+    transition: all .2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .path-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity .2s;
+  }
+  .path-card:hover { transform: translateY(-3px); }
+  .path-card:hover::before { opacity: 1; }
+
+  .path-card.science { border-top: 2px solid var(--sky); }
+  .path-card.science::before { background: linear-gradient(180deg, rgba(125,211,252,.08), transparent); }
+  .path-card.science:hover { border-color: var(--sky); box-shadow: 0 10px 36px rgba(125,211,252,.14); }
+
+  .path-card.spirit { border-top: 2px solid var(--purple); }
+  .path-card.spirit::before { background: linear-gradient(180deg, rgba(167,139,250,.09), transparent); }
+  .path-card.spirit:hover { border-color: var(--purple); box-shadow: 0 10px 36px rgba(167,139,250,.16); }
+
+  .path-icon { font-size: 2.4rem; position: relative; z-index: 1; }
+  .path-label {
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    position: relative; z-index: 1;
+  }
+  .path-card.science .path-label { color: var(--sky); }
+  .path-card.spirit .path-label { color: var(--purple); }
+  .path-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    position: relative; z-index: 1;
+  }
+  .path-desc {
+    font-size: .76rem;
+    color: var(--muted);
+    line-height: 1.5;
+    position: relative; z-index: 1;
+  }
+  .path-cta {
+    font-size: .74rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-top: 6px;
+    position: relative; z-index: 1;
+  }
+  .path-card.science .path-cta { background: rgba(125,211,252,.14); color: var(--sky); border: 1px solid rgba(125,211,252,.3); }
+  .path-card.spirit  .path-cta { background: rgba(167,139,250,.14); color: var(--purple); border: 1px solid rgba(167,139,250,.3); }
+
+  .footer {
+    margin-top: 48px;
+    font-size: .72rem;
+    color: var(--muted);
+    line-height: 1.8;
+    position: relative; z-index: 1;
+  }
+  .footer a { color: var(--muted); text-decoration: none; }
+  .footer a:hover { color: var(--text); }
+
+  @media (max-width: 420px) {
+    .path-grid { grid-template-columns: 1fr; }
+    .wordmark { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="gateway">
+
+  <div class="logo-ring">🌙</div>
+  <div class="wordmark">
+    WILD
+    <span>Wake-Induced Lucid Dreaming</span>
+  </div>
+  <p class="tagline">Two ways into conscious dreaming. One grounded in research, one in contemplative practice. Both lead to the same place — awareness, awake in the dream.</p>
+
+  <!-- CLICK 1: reveals the two paths -->
+  <button class="enter-btn" id="enterBtn"
+          onclick="openPaths()">
+    Choose your way in <span class="arrow">→</span>
+  </button>
+
+  <!-- CLICK 2: pick a path -->
+  <div class="path-grid" id="pathGrid">
+
+    <a href="science/index.html" class="path-card science"
+       onclick="gtag('event','click',{event_category:'gateway',event_label:'path_science'})">
+      <div class="path-icon">🔬</div>
+      <div class="path-label">Oneirology</div>
+      <div class="path-name">The Science</div>
+      <div class="path-desc">Sleep science, metacognition, dream-awareness research. Grounded, evidence-led.</div>
+      <div class="path-cta">Enter →</div>
+    </a>
+
+    <a href="spiritual/index.html" class="path-card spirit"
+       onclick="gtag('event','click',{event_category:'gateway',event_label:'path_spiritual'})">
+      <div class="path-icon">🔮</div>
+      <div class="path-label">The Dreaming Path</div>
+      <div class="path-name">The Practice</div>
+      <div class="path-desc">Dream yoga, the witness, conscious awareness. Contemplative, inward.</div>
+      <div class="path-cta">Enter →</div>
+    </a>
+
+  </div>
+
+  <div class="footer">
+    <a href="science/pages/legal.html">Privacy &amp; Terms</a>
+    &nbsp;·&nbsp;
+    <a href="mailto:CONTACT_EMAIL_PLACEHOLDER">Contact</a>
+    <br>
+    © 2026 WILD Programme. All rights reserved.
+  </div>
+
+</div>
+
+<script>
+  function openPaths() {
+    var grid = document.getElementById('pathGrid');
+    var btn  = document.getElementById('enterBtn');
+    grid.classList.add('open');
+    btn.style.display = 'none';
+    gtag('event','click',{event_category:'gateway',event_label:'open_paths'});
+  }
+</script>
+
+</body>
+</html>
