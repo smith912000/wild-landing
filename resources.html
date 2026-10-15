@@ -107,7 +107,8 @@ input[type="email"].error{border-color:var(--red)}
         <label><input type="checkbox" name="track" value="science" checked> Mostly science</label>
         <label><input type="checkbox" name="track" value="spiritual" checked> Mostly contemplative</label>
       </div>
-      <div class="cap-msg" id="msg"></div>
+      <label class="age-ok" style="display:flex;gap:8px;align-items:flex-start;font-size:12px;line-height:1.4;margin:10px 0;opacity:.85;text-align:left"><input type="checkbox" data-age-ok style="margin-top:2px;width:auto;flex:none"> <span>I am 18 or over and happy to get WILD emails. Unsubscribe any time. <a href="https://smith912000.github.io/wild-programme/02%20-%20Landing%20Pages/legal.html#privacy" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Privacy</a></span></label>
+        <div class="cap-msg" id="msg"></div>
       <div class="cap-fine">Your email goes to our private list. Used only for the 7-day Dream Recall course and occasional WILD updates. Unsubscribe anytime in one click.</div>
     </div>
   </form>
@@ -330,5 +331,8 @@ document.getElementById('cap').addEventListener('submit', async function(e) {
 </script>
 
 <script src="https://smith912000.github.io/wild-programme/assets/founders-door.js" data-corner defer></script>
+<script>/* 18+ and email consent before any signup (COPPA / UK GDPR / PECR) */
+document.addEventListener('submit',function(e){var f=e.target,c=f&&f.querySelector&&f.querySelector('[data-age-ok]');if(!c||c.checked)return;e.preventDefault();e.stopImmediatePropagation();var l=c.closest('label');if(l){l.style.color='#f85149';l.scrollIntoView({block:'center',behavior:'smooth'});}c.focus();},true);
+</script>
 </body>
 </html>
